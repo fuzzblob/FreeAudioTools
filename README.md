@@ -1,9 +1,12 @@
 # Chris Tammik's free audio tools
 
-This is a Unity project which contains some audio tools I built.
-These tools are free licened under the MIT License.
+This is a Unity project which contains some audio tools I built and hereby release them under the MIT License.
+
+Do download the newest versions of the scrits simply navigate to \FreeAudioTools\UnityPackage\ and download the newest file (yyyymmdd).
 
 When opening up the project for the first time, please opene the scene main.unity and hit the play button to run the scene. The main camera has a listere attached (as per default in a new scene). Another component which was added to demonstrate the tool is the PlaySoundExample.cs script. It holds a reference to the "raindrops" prefab. When the scene is played the PlaySoundExample will load the raindrops prefab and call the Play() method on the FullIndieAudioSound component attached.
+
+PlaySoundExample has some useful comments in its code which explain how the sound is being instanciated and played. If you set the stop variable to true, the sound will stop.
 
 The FullIndieAudioSound is a script that allows basic control over audio settings. It is an isntance based system which means audio behaviour needs to be defined per sound effect and storen in a prefab (Unitys GameObject preset). To play a sound the prefab must be instaciated.
 

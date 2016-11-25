@@ -8,6 +8,8 @@ public class PlaySoundExample : MonoBehaviour {
     private GameObject soundInstance;
     private FullIndieAudioSound sound;
 
+    public bool stop = false;
+
     void Start () {
         // to load a prefab you can instanciate it
         // this returns a Object which needs to be cast as a GameObject
@@ -16,4 +18,13 @@ public class PlaySoundExample : MonoBehaviour {
         // if we store a FullIndieAudioSound as a reference we can call the Play() method on it
         sound.Play();
 	}
+
+    void Update()
+    {
+        if(stop && sound != null)
+        {
+            sound.StopAll();
+            stop = false;
+        }
+    }
 }
