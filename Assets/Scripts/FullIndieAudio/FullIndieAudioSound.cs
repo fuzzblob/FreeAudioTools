@@ -58,8 +58,10 @@ public class FullIndieAudioSound : MonoBehaviour {
     #endregion
 
     void Start () {
-        sources.Add(gameObject.AddComponent<AudioSource>()); // creating initial audio source
-	}
+        sources.Add(transform.GetComponent<AudioSource>());
+        lpf = transform.GetComponent<AudioLowPassFilter>();
+        hpf = transform.GetComponent<AudioHighPassFilter>();
+    }
     void Awake()
     {
         if(playOnAwake)
@@ -83,6 +85,7 @@ public class FullIndieAudioSound : MonoBehaviour {
 
     public void Play()
     {
+        Start();
         AudioSource source = GetSource();
         playing = true;
 
@@ -100,7 +103,6 @@ public class FullIndieAudioSound : MonoBehaviour {
 
         if (lowPassFilter < 22000)
         {
-            if (lpf == null) { lpf = gameObject.AddComponent<AudioLowPassFilter>(); }
             lpf.enabled = true;
             lpf.cutoffFrequency = lowPassFilter;
         }
@@ -110,7 +112,6 @@ public class FullIndieAudioSound : MonoBehaviour {
         }
         if (highPassFilter > 10)
         {
-            if (hpf == null) { hpf = gameObject.AddComponent<AudioHighPassFilter>(); }
             hpf.enabled = true;
             hpf.cutoffFrequency = highPassFilter;
         }

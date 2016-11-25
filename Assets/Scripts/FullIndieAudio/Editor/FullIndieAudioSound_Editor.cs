@@ -74,7 +74,13 @@ public class FullIndieAudioSound_Editor : Editor
         {
             for(int i = 0; i < sound.clips.Count; i++)
             {
+                EditorGUILayout.BeginHorizontal();
                 sound.clips[i] = EditorGUILayout.ObjectField(sound.clips[i], typeof(AudioClip), false) as AudioClip;
+                if(GUILayout.Button("Remove"))
+                {
+                    sound.clips.Remove(sound.clips[i]);
+                }
+                EditorGUILayout.EndHorizontal();
             }
         }
         EditorGUILayout.Space();
