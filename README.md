@@ -3,6 +3,8 @@
 This is a Unity project which contains some audio tools I built.
 These tools are free licened under the MIT License.
 
+When opening up the project for the first time, please opene the scene main.unity and hit the play button to run the scene. The main camera has a listere attached (as per default in a new scene). Another component which was added to demonstrate the tool is the PlaySoundExample.cs script. It holds a reference to the "raindrops" prefab. When the scene is played the PlaySoundExample will load the raindrops prefab and call the Play() method on the FullIndieAudioSound component attached.
+
 The FullIndieAudioSound is a script that allows basic control over audio settings. It is an isntance based system which means audio behaviour needs to be defined per sound effect and storen in a prefab (Unitys GameObject preset). To play a sound the prefab must be instaciated.
 
 - Play On Awake starts the sownd as soon as the script awakes. Alternatively call the Play() method on the FullIndieAudioSound component.
