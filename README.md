@@ -10,6 +10,10 @@ PlaySoundExample has some useful comments in its code which explain how the soun
 
 The FullIndieAudioSound is a script that allows basic control over audio settings. It is an isntance based system which means audio behaviour needs to be defined per sound effect and storen in a prefab (Unitys GameObject preset). To play a sound the prefab must be instaciated.
 
+Screenshots:
+https://cloud.githubusercontent.com/assets/35717/21075982/ff078f66-bed4-11e6-98b9-16d5709822b3.png
+https://cloud.githubusercontent.com/assets/35717/21075983/ff083628-bed4-11e6-93f2-6df06f300e65.png
+
 - Play On Awake starts the sownd as soon as the script awakes. Alternatively call the Play() method on the FullIndieAudioSound component.
 - The volume is being shown in decibels in a range from 0 (no volume change) over -6dB (1/2 amplidude), -12dB (1/4 amplidude) all the way down to -80 dB (silence);
 - Volume randomization ranges from zero to -12 dB
