@@ -8,6 +8,9 @@ public class PlaySoundExample : MonoBehaviour {
     private GameObject soundInstance;
     private FullIndieAudioSound sound;
 
+    public bool retrigger = false;
+    public float retriggerThreshhold = 0.2f;
+
     public bool stop = false;
 
     void Start () {
@@ -19,9 +22,20 @@ public class PlaySoundExample : MonoBehaviour {
         sound.Play();
 	}
 
+    float timer = 0;
     void Update()
     {
-        if(stop && sound != null)
+        if(sound != null)
+        {
+            timer += Time.deltaTime;
+            if(retrigger && timer > retriggerThreshhold)
+            {
+                timer = 0;
+                sound.Play();
+            }
+        }
+
+        if(stop)
         {
             sound.StopAll();
             stop = false;

@@ -19,9 +19,9 @@ https://cloud.githubusercontent.com/assets/35717/21075983/ff083628-bed4-11e6-93f
 - Volume randomization ranges from zero to -12 dB
 - The pitch is being shown insemitones with a range of -24 (two octave lower / 0.25x playback speed) over 0 (no change in pitch) up two +24 (two octave higher / 4x playback speed)
 - pitch randomisation has a range of 0 up to +12 semitones. to achieve natural sounding results for sound effects this should notb exceed 3-4 semitones of randomisation.
-- retriggering retriggers the sound based on frame updates. A basic threshhold for the frame counter can be set and then a random starting offset for the counter reset can randomize timings. WARNING: frames are not a reliable source of timing!
-- When retriggering is not eneabled the looping option becomes available. If selected it will loop whatever audio is being played. To stop a FullIndieAudioSound from producing sound you can call the StopAll method.
-- If neither retrigger nor looping are enabled, the sound will play once and then wait for new Play() method calls.
+- The looping option will loop whatever audio is being played.
+- To stop a FullIndieAudioSound from producing sound you can call the StopAll method.
+- If looping is not enabled, the sound will play once and then wait for new Play() method calls.
 - Low Pass filter and High Pass filter cut treble / bass frequencies respectively. This can be used to simulate a "muffled" effect such as a sound playing from another room etc.
 - posistional audio lets the Unity Audio Engine pan the sound left / right across the speakers / headphones according to its position in 3D space in relation to the audio listener (should be attached tyo the main camera by default).
 - If a sacialisation plugin is selected in the Unity Project Audio Settings and posistional audio is enabled, the oprion to spacialize the sound for Virtual Reality becomes effective. This will enable the player in  to track sounds that are ouside of their field of view.

@@ -18,10 +18,10 @@ public class FullIndieAudioSound : MonoBehaviour {
     [Range(0, 12)]
     public float randomPitch = 0;
 
-    public bool retrigger = false;
-    [Range(0,500)]
-    public int triggerRate = 12;
-    [Range(0,500)]
+//    public bool retrigger = false;
+//    [Range(0,500)]
+//    public int triggerRate = 12;
+//    [Range(0,500)]
     public int randomTriggerStart = 5;
     public bool looping = false;
 
@@ -43,7 +43,7 @@ public class FullIndieAudioSound : MonoBehaviour {
     #endregion
 
     #region State
-    [System.NonSerialized]
+//    [System.NonSerialized]
     public List<AudioSource> sources = new List<AudioSource>();
     [System.NonSerialized]
     AudioLowPassFilter lpf = null;
@@ -57,35 +57,21 @@ public class FullIndieAudioSound : MonoBehaviour {
     uint updateCounter;
     #endregion
 
-    void Start () {
-        sources.Add(transform.GetComponent<AudioSource>());
-        lpf = transform.GetComponent<AudioLowPassFilter>();
-        hpf = transform.GetComponent<AudioHighPassFilter>();
-    }
     void Awake()
     {
+		GetSource();
+		AudioSource firstSource = transform.GetComponent<AudioSource>();
+		if(firstSource != null) { sources.Add(firstSource); }
+		lpf = transform.GetComponent<AudioLowPassFilter>();
+		hpf = transform.GetComponent<AudioHighPassFilter>();
         if(playOnAwake)
         {
             Play();
         }
     }
-    
-    void LateUpdate()
-    {
-        if (retrigger && playing) // only happens when initial play and not stopped
-        {
-            updateCounter++;
-            if (updateCounter > triggerRate)
-            {
-                updateCounter = (uint)Random.Range(0, randomTriggerStart);
-                Play();
-            }
-        }
-    }
 
     public void Play()
     {
-        Start();
         AudioSource source = GetSource();
         playing = true;
 
@@ -93,10 +79,9 @@ public class FullIndieAudioSound : MonoBehaviour {
         source.volume = GetRandomVolume();
         source.pitch = GetRandomPitch();
 
-        if (retrigger == false)
-        {
-            if (looping) { source.loop = true; }
-        }
+      	if (looping) { source.loop = true; }
+		else { source.loop = false; }
+
         if (spacial) { source.spatialBlend = 1f; }
         else { source.spatialBlend = 0f; }
         if (vr) { source.spatialize = true; }

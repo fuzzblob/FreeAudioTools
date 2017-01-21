@@ -35,17 +35,17 @@ public class FullIndieAudioSound_Editor : Editor
             sound.randomPitch = EditorGUILayout.Slider("Random Pitch (st)", sound.randomPitch, 0, 12);
             EditorGUILayout.Space();
 
-            sound.retrigger = EditorGUILayout.ToggleLeft("Retrigger Continously", sound.retrigger);
-            if (sound.retrigger == true)
-            {
-                sound.looping = false;
-                sound.triggerRate = EditorGUILayout.IntSlider("Trigger Rate (frames)", sound.triggerRate, 0, 500);
-                sound.randomTriggerStart = EditorGUILayout.IntSlider("Random Trigger Reset", sound.randomTriggerStart, 0, 500);
-            }
-            else
-            {
-                sound.looping = EditorGUILayout.ToggleLeft("Sound Looping", sound.looping);
-            }
+//            sound.retrigger = EditorGUILayout.ToggleLeft("Retrigger Continously", sound.retrigger);
+//            if (sound.retrigger == true)
+//            {
+//                sound.looping = false;
+//                sound.triggerRate = EditorGUILayout.IntSlider("Trigger Rate (frames)", sound.triggerRate, 0, 500);
+//                sound.randomTriggerStart = EditorGUILayout.IntSlider("Random Trigger Reset", sound.randomTriggerStart, 0, 500);
+//            }
+//            else
+            
+            sound.looping = EditorGUILayout.ToggleLeft("Sound Looping", sound.looping);
+            
             EditorGUILayout.Space();
 
             sound.lowPassFilter = EditorGUILayout.Slider("Low Pass Filter", sound.lowPassFilter, 10, 22000);
