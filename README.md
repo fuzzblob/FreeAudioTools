@@ -1,8 +1,14 @@
-# Chris Tammik's free audio tools
+# Chris Tammik's free audio tools (deprecated)
+
+# Disclaimer:
+
+This project has been deprecated. It will remain online for a while longer until my audio scripting tutorials are all sorted out. DO NOT USE THIS IN PRODUCTION! The serialization of prefabs is very broken (potentially because of the custom editor) so you data will not be saved properly. Collaborative work over git becomes impossible.
+I highly reccommend using Unity's ScriptableObject class to achieve similar results as prefabs would. I will cover this in detail in articles mentioned above. You can expect the full series of articles to be realeased through the month of Febuary 2017. Links will be shared here as well as on my blog (http://blog.tammik.ca)
+
+Chris
+(2017.01.30)
 
 This is a Unity project which contains some audio tools I built and hereby release them under the MIT License.
-
-Do download the newest versions of the scrits simply navigate to \FreeAudioTools\UnityPackage\ and download the newest file (yyyymmdd).
 
 When opening up the project for the first time, please opene the scene main.unity and hit the play button to run the scene. The main camera has a listere attached (as per default in a new scene). Another component which was added to demonstrate the tool is the PlaySoundExample.cs script. It holds a reference to the "raindrops" prefab. When the scene is played the PlaySoundExample will load the raindrops prefab and call the Play() method on the FullIndieAudioSound component attached.
 
@@ -13,6 +19,10 @@ The FullIndieAudioSound is a script that allows basic control over audio setting
 Screenshots:
 https://cloud.githubusercontent.com/assets/35717/21075982/ff078f66-bed4-11e6-98b9-16d5709822b3.png
 https://cloud.githubusercontent.com/assets/35717/21075983/ff083628-bed4-11e6-93f2-6df06f300e65.png
+
+# Reminder:
+
+Do not use in production code. Read disclaimer above.
 
 - Play On Awake starts the sownd as soon as the script awakes. Alternatively call the Play() method on the FullIndieAudioSound component.
 - The volume is being shown in decibels in a range from 0 (no volume change) over -6dB (1/2 amplidude), -12dB (1/4 amplidude) all the way down to -80 dB (silence);
