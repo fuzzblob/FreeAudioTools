@@ -1,11 +1,10 @@
-# Chris Tammik's free audio tools (deprecated)
+# Maris Tammik's free audio tools (deprecated)
 
 # Disclaimer:
 
 This project has been deprecated. It will remain online for a while longer until my audio scripting tutorials are all sorted out. DO NOT USE THIS IN PRODUCTION! The serialization of prefabs is very broken (potentially because of the custom editor) so you data will not be saved properly. Collaborative work over git becomes impossible.
 I highly reccommend using Unity's ScriptableObject class to achieve similar results as prefabs would. I will cover this in detail in articles mentioned above. You can expect the full series of articles to be realeased through the month of Febuary 2017. Links will be shared here as well as on my blog (http://blog.tammik.ca)
 
-Chris
 (2017.01.30)
 
 This is a Unity project which contains some audio tools I built and hereby release them under the MIT License.
